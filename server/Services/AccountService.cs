@@ -1,5 +1,4 @@
 namespace garbagegame.Services;
-
 public class AccountService
 {
   private readonly AccountsRepository _repo;
