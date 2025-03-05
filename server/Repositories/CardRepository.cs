@@ -1,3 +1,4 @@
+
 namespace garbagegame.Repositories;
 
 public class CardRepository
@@ -7,6 +8,13 @@ public class CardRepository
     public CardRepository(IDbConnection db)
     {
         _db = db;
+    }
+
+    internal List<Card> GetAllCard()
+    {
+        string sql = "SELECT * FROM cards;";
+
+        return _db.Query<Card>(sql).ToList();
     }
 }
 

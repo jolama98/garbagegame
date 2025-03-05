@@ -1,16 +1,31 @@
 namespace garbagegame.Controllers;
 
-[Authorize]
+// [Authorize]
 [ApiController]
 [Route("[controller]")]
 public class CardController : ControllerBase
 {
     private readonly CardService _cardService;
-    private readonly Auth0Provider _auth0Provider;
 
-    public CardController(CardService cardService, Auth0Provider auth0Provider)
+
+    public CardController(CardService cardService)
     {
         _cardService = cardService;
-        _auth0Provider = auth0Provider;
+
+    }
+
+    [HttpGet]
+    public ActionResult<List<Card>> GetAllCards()
+    {
+        try
+        {
+            List<Card> cards = _cardService.GetAllCards();
+            return Ok(cards);
+        }
+        catch (Exception exception)
+        {
+            return BadRequest(exception.Message);
+        }
+
     }
 }

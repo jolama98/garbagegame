@@ -1,3 +1,4 @@
+
 namespace garbagegame.Services;
 
 public class CardService
@@ -7,5 +8,11 @@ public class CardService
     public CardService(CardRepository cardRepository)
     {
         _cardRepository = cardRepository;
+    }
+
+    internal List<Card> GetAllCards()
+    {
+        List<Card> cards = _cardRepository.GetAllCard();
+        return cards;
     }
 }
