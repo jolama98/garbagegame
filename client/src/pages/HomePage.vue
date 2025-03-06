@@ -1,13 +1,11 @@
-<script setup >
-import Example from '@/components/Example.vue';
+<script setup>
+import Garbage from '@/components/Garbage.vue';
 
 
 </script>
 
 <template>
-  <Example />
+  <Garbage />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

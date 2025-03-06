@@ -2,7 +2,8 @@ namespace garbagegame.Controllers;
 
 // [Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
+
 public class CardController : ControllerBase
 {
     private readonly CardService _cardService;
